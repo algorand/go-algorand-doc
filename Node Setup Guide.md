@@ -63,7 +63,7 @@ Unzip the package (use the appropriate filename)
 
 If you get an error trying to download the update:
     sudo apt install ca-certificates
-    Try ./update.sh -i -c master again
+    Try ./update.sh -i -c stable again
 
 You should now have a running algorand node!  You can verify the daemon is running:
     pgrep algod
