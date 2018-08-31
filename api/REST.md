@@ -10,7 +10,7 @@
 |/accounts|passphrase string|pk string|PUT|Given a passphrase returns the user account|
 |/block/{round}||block data|GET|Given a round number, returns the block information|
 |/passphrase||string|GET|Returns a cryptographically secure passphrase.|
-|/transactions||from, to string, (optional) fee, amount number|txid string|POST|Posts transaction to the network|
+|/transactions|from, to string, (optional) fee, amount number|txid string|POST|Posts transaction to the network|
 |/transactions/fee||number|GET|Returns the current suggested fee in the network|
 |/transactions/{limit}||list of transactions|GET|Returns the list of confirmed transactions from all accounts on the node.|
 |/version||string|GET|Returns Algorand's node version|
