@@ -16,9 +16,20 @@ Installing a new node is generally a 3-step process:
 Prepare your environment by installing dependencies
 Retrieve the installation package appropriate for your platform
 Optionally, verify the hash of the tar.gz file
-Run update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node
+Run update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node -n
 
-When the installer runs, it will pull down the latest update package from S3 for your platform and install it.  When it has finished, it will launch the node and you should be up and running.
+When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
+The '-n' option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
+Before starting for the first time, you need to enable telemetry and configure a Host name for your node (to help identify sources of telemetry).
+
+    cd ~/algorand/testnet
+    goal logging enable -n MeaningfulHostName
+
+    (if you see an error about the ~/.algorand folder, run "mkdir ~/.algorand" and run the goal logging comand again)
+
+Then you can start the node!
+
+    goal node start -d data/node
 
 To check for, and install, the latest update, you can simply run "update.sh -d ~/algorand/testnet/data/node" at any time.  It will query S3 for available builds and see if any are newer than your installed version (to force an update, you can delete algod and run update -i -c stable again).  If there is a newer version, it’s downloaded and unpacked before we shut down your node, back up your files, and install the update.  If any part of the process fails, we attempt to restore your previous version (bin and data) and restart the node.  If it succeeds, we’ll start the new version of the node (even if it wasn’t running when you initiated the update).
 
@@ -37,7 +48,20 @@ Create a temporary folder to hold the install package and files
 Verify SHA for the file
 Unzip the package (use the appropriate filename)
     tar -xf install_master_darwin-amd64.tar.gz
-./update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node
+./update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node -n
+
+When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
+The '-n' option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
+Before starting for the first time, you need to enable telemetry and configure a Host name for your node (to help identify sources of telemetry).
+
+    cd ~/algorand/testnet
+    goal logging enable -n MeaningfulHostName
+
+    (if you see an error about the ~/.algorand folder, run "mkdir ~/.algorand" and run the goal logging comand again)
+
+Then you can start the node!
+
+    goal node start -d data/node
 
 You should now have a running algorand node!  You can verify the daemon is running:
     pgrep algod
@@ -59,11 +83,24 @@ Create a temporary folder to hold the install package and files
 Verify SHA for the file
 Unzip the package (use the appropriate filename)
     tar -xf install_master_linux-amd64.tar.gz
-./update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node
+./update.sh -i -c stable -p ~/algorand/testnet -d ~/algorand/testnet/data/node -n
 
 If you get an error trying to download the update:
     sudo apt install ca-certificates
     Try ./update.sh -i -c stable again
+
+When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
+The '-n' option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
+Before starting for the first time, you need to enable telemetry and configure a Host name for your node (to help identify sources of telemetry).
+
+    cd ~/algorand/testnet
+    goal logging enable -n MeaningfulHostName
+
+    (if you see an error about the ~/.algorand folder, run "mkdir ~/.algorand" and run the goal logging comand again)
+
+Then you can start the node!
+
+    goal node start -d data/node
 
 You should now have a running algorand node!  You can verify the daemon is running:
     pgrep algod
@@ -95,7 +132,7 @@ Create a config.json to your ~/algorand/testnet/data/node folder with the follow
 }
 
 Configure your firewall / port-forwarding so the endpoint is accessible
-Update our SRV records for the phonebook (when nodes start up they will query and see the updated list including your FQDN or IP address).  The phonebook is stored under <network>.algorand.network, which is managed by Google Domains, where <network> can currently be either devnet or testnet.
+Update our SRV records for the phonebook (when nodes start up they will query and see the updated list including your FQDN or IP address).  The phonebook is stored as SRV records under <network>.algorand.network, where <network> can currently be either devnet or testnet.
 
 Start / restart your node.  NOTE: See the ! IMPORTANT ! note above before starting your node.
 
