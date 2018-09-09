@@ -141,8 +141,8 @@ To ensure your node is running the latest software, we recommend using CRON to c
 We recommend the following:
 > crontab -e
 
-Add a line that looks like this (run update.sh every hour of every day), where ‘user’ is the name of the account you’re using to install / run the node:
-0 * * * * /home/user/algorand/testnet/update.sh -d /home/user/algorand/testnet/data/node >/home/user/algorand/testnet/update.log 2>&1
+Add a line that looks like this (run update.sh every hour, on the half-hour, of every day), where ‘user’ is the name of the account you’re using to install / run the node:
+30 * * * * /home/user/algorand/testnet/update.sh -d /home/user/algorand/testnet/data/node >/home/user/algorand/testnet/update.log 2>&1
 
 Notes on installing on other platforms
 CentOS:
