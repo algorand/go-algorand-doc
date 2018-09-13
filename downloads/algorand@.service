@@ -6,8 +6,8 @@
 ##
 ## To enable and start algod for a particular directory, run:
 ##
-##   systemctl enable algorand@/home/user/node/data
-##   systemctl start  algorand@/home/user/node/data
+##   systemctl enable algorand@$(systemd-escape /home/algo/algorand/testnet/data/relay)
+##   systemctl start algorand@$(systemd-escape /home/algo/algorand/testnet/data/relay)
 ##
 ## This assumes a directory layout where the algod binary lives at
 ## /home/user/node/algod, and the data lives under
