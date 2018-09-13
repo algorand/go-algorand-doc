@@ -6,7 +6,7 @@ We are building up this repo as we roll out testnet and on-board external users.
 
 To get started, refer to the [Node Setup Guide](https://github.com/algorand/go-algorand-doc/blob/master/Node%20Setup%20Guide.md).
 
-We are currently planning to use a private Slack **#testnet** channel for testnet support and discussions, but will also be monitoring this Github repo for issues and discussions.  If you wish to participate in our Slack channel, please send us an email address (or more) and we'll invite them to our channel.
+We are currently using a private Slack **#testnet** channel for testnet support and discussions, but will also be monitoring this Github repo for issues and discussions.  If you wish to participate in our Slack channel, please send us an email address (or more) and we'll invite them to our channel.
 
 Please contact us at testnet@algorand.com if you're not sure who to contact directly.
 
@@ -16,7 +16,7 @@ If you want to suggest an alternative communications channel, feel free to do so
 At this time, we're expecting participants to run standalone Nodes and not Relays, so the hardware requirements are fairly minimal.  You need 4-8GB RAM, 100GB HDD/SSD, and 10Mbit broadband.  The more cores in your CPU the better, but generally 4 cores are more than enough for a single node.  There are diminishing returns after that.  There is no specific GPU-optimized code, so your graphics card should have no impact.
 
 ## Once you have a running node
-Ensure you have enabled telemetry and sent us your Node name and GUID so we can correlate telemetry properly.
+Ensure you have enabled telemetry and send us your Node name and GUID so we can correlate telemetry properly.
 
 It's important that you are configured to update regularly or you risk being disconnected from the network and unable to connect until after you update. Not to mention falling behind in features and bug fixes.  We recommend setting up a CRON job as outlined in the [Node Setup Guide](https://github.com/algorand/go-algorand-doc/blob/master/Node%20Setup%20Guide.md).  If you want to manually check for an update, use `./update.sh -d ~/node/data` as discussed in the Setup Guide.
 
