@@ -8,6 +8,7 @@
 6. Configuring your node as a Relay
 7. Configuring auto-update
 8. Running algod as a service
+9. Notes on installing on other Linux Distros
 
 ## 1. Testnet nodes and the update process
 The current release of our testnet package is designed around simple installation and a simplified auto-update mechanism.  A node installation consists of 2 folders: the Binaries (bin) and the Data (data) folders.  The bin folder can be anywhere you choose.  A recommended location is `~/node`.  We currently assume the folder is dedicated to algorand binaries, as we archive the folder before each update (we do not currently delete anything, but will overwrite our own binaries and add new ones).  The data folder is assumed to be `~/.algorand-testnet`, but can be overridden.  We will create it if it doesn’t exist.  We recommend using something under your node folder, e.g. `~/node/data`.
@@ -143,9 +144,27 @@ Add a line that looks like this (run update.sh every hour of every day), where �
 `30 * * * * /home/user/node/update.sh -d /home/user/node/data >/home/user/node/update.log 2>&1`
 
 ## 8. Running algod as a service
-
 To ensure your node has maximum availability on the network, we have added the ability to run it as a service.
 
 We have the process working but have not incorporated it into our installation, so it is a manual process.
 
 After installing per the above instructions, download githib: downloads/algorand@.service and follow the instructions at the top of the file.  Note that the file assumes you used the recommended binary and data locations above. You will also need to edit it to change 'user' to the appropriate username.
+
+## 9. Notes on installing on other Linux Distros
+### AWS Linux (Red Hat 4.8.5-11)
+There isn't a compatible libsodium package available containing the recent changes required for our application that is installable with `yum`.
+This package has been verified to work with our latest builds: https://rpmfind.net/linux/remi/enterprise/6/remi/x86_64/libsodium-last-1.0.14-1.el6.remi.x86_64.rpm
+
+(See https://rpmfind.net/linux/RPM/remi/enterprise/6/x86_64/libsodium-last-1.0.14-1.el6.remi.x86_64.html)
+
+### CentOS
+ * sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+ * sudo yum install libsodium
+
+### Ensure your machine’s time is correct.  Ensure you have an NTP service running.
+ 
+On CentOS:
+ * `sudo yum install ntp`
+ * `sudo chkconfig ntpd on`
+ * `sudo ntpdate pool.ntp.org`
+ * `sudo service ntpd start`
