@@ -1,12 +1,12 @@
 # go-algorand-doc
 
-## Getting started with Testnet
+## Getting started with TestNet
 
-We are building up this repo as we roll out testnet and on-board external users.
+We are building up this repo as we roll out TestNet and on-board external users.
 
 To get started, refer to the [Node Setup Guide](https://github.com/algorand/go-algorand-doc/blob/master/Node%20Setup%20Guide.md).
 
-We are currently using a private Slack **#testnet** channel for testnet support and discussions, but will also be monitoring this Github repo for issues and discussions.  If you wish to participate in our Slack channel, please send us an email address (or more) and we'll invite them to our channel.
+We are currently using a private Slack **#testnet** channel for TestNet support and discussions, but will also be monitoring this Github repo for issues and discussions.  If you wish to participate in our Slack channel, please send us an email address (or more) and we'll invite them to our channel.
 
 Please contact us at testnet@algorand.com if you're not sure who to contact directly.
 
@@ -34,8 +34,8 @@ Once you create an account, you can use our [Dispenser](https://bank.testnet.alg
 
 The `./goal clerk` command is used to generate your own transactions.
 
-We currently have a [dashboard](http://r1.algorand.network:5001) running for testnet, which displays the view of the blockchain from one of our Relays.
-    
+We currently have a [dashboard](http://r1.algorand.network:5001) running for TestNet, which displays the view of the blockchain from one of our Relays.
+
 We have a script running that's generating random transactions between some test accounts, so the network currently has ~4 TPS being generated.
 
 ## Writing your own client
@@ -43,4 +43,4 @@ Refer to our [REST API](https://github.com/algorand/go-algorand-doc/blob/master/
 
 Let us know where you would like more documentation and we'll look at prioritizing that.
 
-Thanks, and **Welcome to Algorand's Testnet!**
+Thanks, and **Welcome to Algorand's TestNet!**
