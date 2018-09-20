@@ -152,10 +152,7 @@ After installing per the above instructions, download githib: downloads/algorand
 
 ## 9. Notes on installing on other Linux Distros
 ### AWS Linux (Red Hat 4.8.5-11)
-There isn't a compatible libsodium package available containing the recent changes required for our application that is installable with `yum`.
-This package has been verified to work with our latest builds: https://rpmfind.net/linux/remi/enterprise/6/remi/x86_64/libsodium-last-1.0.14-1.el6.remi.x86_64.rpm
-
-(See https://rpmfind.net/linux/RPM/remi/enterprise/6/x86_64/libsodium-last-1.0.14-1.el6.remi.x86_64.html)
+ * sudo yum install https://rpmfind.net/linux/remi/enterprise/6/remi/x86_64/libsodium23-1.0.16-1.el6.remi.x86_64.rpm
 
 ### CentOS
  * sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
