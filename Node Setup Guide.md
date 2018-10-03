@@ -47,10 +47,10 @@ To install on a Mac (OSX v10.13.4 / High Sierra):
 * Create a temporary folder to hold the install package and files
   * `mkdir ~/inst`
   * `cd ~/inst`
-  * copy the installer (install_stable_darwin-amd64.tar.gz) from github: downloads/installers/darwin_amd64
+  * copy the installer (install_master_darwin-amd64.tar.gz) from github: downloads/installers/darwin_amd64
     * \(optional\) Verify SHA for the file
   * Unzip the package (use the appropriate filename)
-    * `tar -xf install_stable_darwin-amd64.tar.gz`
+    * `tar -xf install_master_darwin-amd64.tar.gz`
   * `./update.sh -i -c stable -p ~/node -d ~/node/data -n`
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
@@ -85,10 +85,10 @@ Nodes have been verified on Ubuntu 18.04.  Other Debian-based distros should wor
 * Create a temporary folder to hold the install package and files
   * `mkdir ~/inst`
   * `cd ~/inst`
-  * copy the installer (install_stable_linux-amd64.tar.gz) from github: downloads/installers/linux_amd64
+  * copy the installer (install_master_linux-amd64.tar.gz) from github: downloads/installers/linux_amd64
     * \(optional\) Verify SHA for the file
   * Unzip the package (use the appropriate filename)
-    * `tar -xf install_stable_linux-amd64.tar.gz`
+    * `tar -xf install_master_linux-amd64.tar.gz`
   * `./update.sh -i -c stable -p ~/node -d ~/node/data -n`
     * If you get an error trying to download the update:
       * `sudo apt install ca-certificates`
