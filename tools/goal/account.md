@@ -21,7 +21,7 @@ Creates a new account with its corresponding *.rootkey wallet file in the curren
 ## To report the balances for the specific account
 > `goal account balance -d <path_to_data_dir> -a <account_address>`
 
-## To report details for all accounts tied to the spcific node instance
+## To report details for all accounts tied to the specific node instance
 > `goal account list -d <path_to_data_dir>`
 
 Also indicates if the account is `[offline]` or `[online]`, and if the account is the Default account for `goal`.
