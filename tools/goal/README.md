@@ -4,7 +4,7 @@ GOAL is the CLI for interacting with a running Algorand instance. The binary 'go
 
 ## GOAL Commands
 
-|  Usage: |
+|  Usage |
 |-|
 | goal [flags]|
 | goal [command] |
@@ -23,7 +23,7 @@ Available Commands:
 | node    | Init, stop and get the status of the specified algorand node |
 | version | The current version of the Algorand daemon (algod) |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -d, --datadir string | Data directory for the node |
 | -h, --help           | help for goal |
@@ -36,7 +36,7 @@ Use "goal [command] --help" for more information about a command.
 
 Create, delete, list and control algorand accounts
 
-| Usage: |
+| Usage |
 |-|
 | goal account [flags] |
 | goal account [command] |
@@ -52,7 +52,7 @@ Available Commands:
 | onlinestatus | Change online status for the specified account |
 | rewards      | Retrieve the recent rewards for the specified account |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -f, --default      | Set this account as the default one |
 | -h, --help         | help for account |
@@ -64,7 +64,7 @@ Available Commands:
 
 Send and view recent transactions and balances
 
-| Usage: |
+| Usage |
 |-|
 | goal clerk [flags] |
 | goal clerk [command] |
@@ -74,11 +74,11 @@ Send and view recent transactions and balances
 | recent      | Shows a list of the most recent transaction (defaults to last 10) |
 | send        | Send money to an address |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help  | help for clerk |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
 
@@ -92,7 +92,7 @@ Send and view recent transactions and balances
 
 Access ledger-related details
 
-| Usage: |
+| Usage |
 |-|
 | goal ledger [flags] |
 | goal ledger [command] |
@@ -102,11 +102,11 @@ Access ledger-related details
 | balances    | Show all non-zero account balances |
 | rewardstree | Shows the current rewards tree |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help  | help for ledger |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
 
@@ -116,11 +116,11 @@ Access ledger-related details
 
 Displays license information
 
-| Usage: |
+| Usage |
 |-|
 | goal license [flags] |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help  | help for license |
 
@@ -130,7 +130,7 @@ Displays license information
 
 Enable/disable and configure Algorand remote logging
 
-| Usage: |
+| Usage |
 |-|
 | goal logging [flags] |
 | goal logging [command] |
@@ -141,11 +141,11 @@ Enable/disable and configure Algorand remote logging
 | enable      | Enable Algorand remote logging |
 | send        | Upload logs and data for analysis |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help  | help for logging |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
 
@@ -155,7 +155,7 @@ Enable/disable and configure Algorand remote logging
 
 Allows creating, starting, stopping, and deleting private, locally-hosted networks
 
-| Usage: |
+| Usage |
 |-|
 | goal network [flags] |
 | goal network [command] |
@@ -168,12 +168,12 @@ Allows creating, starting, stopping, and deleting private, locally-hosted networ
 | status     | Prints status for all nodes in a deployed private network |
 | stop       | Stop a deployed private network |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help            | help for network |
 | -r, --rootdir string  | Root directory for the private network directories |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
 
@@ -183,7 +183,7 @@ Allows creating, starting, stopping, and deleting private, locally-hosted networ
 
 Allows to issue, stop and get the status of the specified algorand node
 
-| Usage: |
+| Usage |
 |-|
 | goal node [flags] |
 | goal node [command] |
@@ -196,11 +196,11 @@ Allows to issue, stop and get the status of the specified algorand node
 | status     | Get the current node status |
 | stop       | stop the specified Algorand node |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help  | help for node |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
 
@@ -210,15 +210,15 @@ Allows to issue, stop and get the status of the specified algorand node
 
 The current version of the Algorand daemon (algod)
 
-| Usage: |
+| Usage |
 |-|
 | goal version [flags] |
 
-| Flags: |
+| Flags | Usage |
 |-|-|
 | -h, --help     | help for version |
 | -v, --verbose  | Print all version info available |
 
-| Global Flags: |
+| Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
