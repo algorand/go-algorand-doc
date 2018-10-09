@@ -32,7 +32,7 @@ Use "goal [command] --help" for more information about a command.
 
 ---
 
-### [`goal account`](https://github.com/algorand/go-algorand-doc/blob/master/tools/account.md)
+### [`goal account`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/account.md)
 
 Create, delete, list and control algorand accounts
 
@@ -151,7 +151,7 @@ Enable/disable and configure Algorand remote logging
 
 ---
 
-### [`goal network`](https://github.com/algorand/go-algorand-doc/blob/master/tools/network.md)
+### [`goal network`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/network.md)
 
 Allows creating, starting, stopping, and deleting private, locally-hosted networks
 
@@ -179,7 +179,7 @@ Allows creating, starting, stopping, and deleting private, locally-hosted networ
 
 ---
 
-### [`goal node`](https://github.com/algorand/go-algorand-doc/blob/master/tools/node.md)
+### [`goal node`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/node.md)
 
 Allows to issue, stop and get the status of the specified algorand node
 
