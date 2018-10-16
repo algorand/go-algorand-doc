@@ -1,6 +1,6 @@
 # goal network
 
-The `goal network` collection of commands are provided to support the creation and management of 'private networks.  These are fully-formed Algorand networks with private, custom Genesis ledgers running the current build of Algorand software.  Rather than creating a node instance based on the released genesis.json, these networks have their own and need to be manually connected.
+The `goal network` collection of commands are provided to support the creation and management of 'private networks'.  These are fully-formed Algorand networks with private, custom Genesis ledgers running the current build of Algorand software.  Rather than creating a node instance based on the released genesis.json, these networks have their own and need to be manually connected.
 
 The basic idea is that we create one or more data directories and wallets to form this network, specify which node owns which wallets, and can start/stop the network as a unit.  Each node is just like any other node running on TestNet or DevNet.
 
