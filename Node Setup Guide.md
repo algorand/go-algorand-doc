@@ -1,6 +1,6 @@
-# Setting up a Testnet Node or Relay
+# Setting up a TestNet Node or Relay
 
-1. Testnet nodes and the update process
+1. TestNet nodes and the update process
 2. Installing on a Mac
 3. Installing on Ubuntu (we require 18.04)
 4. Installing in Docker
@@ -10,10 +10,10 @@
 8. Running algod as a service
 9. Notes on installing on other Linux Distros
 
-## 1. Testnet nodes and the update process
-The current release of our testnet package is designed around simple installation and a simplified auto-update mechanism.  A node installation consists of 2 folders: the Binaries (bin) and the Data (data) folders.  The bin folder can be anywhere you choose.  A recommended location is `~/node`.  We currently assume the folder is dedicated to algorand binaries, as we archive the folder before each update (we do not currently delete anything, but will overwrite our own binaries and add new ones).  The data folder is assumed to be `~/.algorand-testnet`, but can be overridden.  We will create it if it doesn’t exist.  We recommend using something under your node folder, e.g. `~/node/data`.
+## 1. TestNet nodes and the update process
+The current release of our testnet package is designed around simple installation and a simplified auto-update mechanism.  A node installation consists of 2 folders: the Binaries (bin) and the Data (data) folders.  The bin folder can be anywhere you choose.  A recommended location is `~/node`.  We currently assume the folder is dedicated to algorand binaries, as we archive the folder before each update (we do not currently delete anything, but will overwrite our own binaries and add new ones).  The data folder is assumed to be `~/.algorand-testnet`, but can and should be overridden.  We will create it if it doesn’t exist.  We recommend using something under your node folder, e.g. `~/node/data`.
 The bin folder holds our executables (`goal`, `algod`, `carpenter`, `doberman`, and `updater`), our update script (`update.sh`), and our optional configuration files (`config.json` and `phonebook.json`) -- we only distribute a sample `config.json.example` now.
-The data folder holds `genesis.json`, used for creating the initial ledger (`ledger.sqlite`) in a network-specific sub-folder, generated log files (`node-timestamp.log`, and a `latest.log` symlinked to the latest log file).  You can optionally create a `phonebook.json` and/or `config.json` file and add configuration options that are merged into the defaults read from the bin folder.
+The data folder holds `genesis.json`, used for creating the initial ledger (`ledger.sqlite`) in a network-specific sub-folder, generated log files (`node.log`, and a `latest.log` symlinked to the latest log file).  You can optionally create a `phonebook.json` and/or `config.json` file and add configuration options that are merged into the defaults read from the bin folder.
 
 #### Installing a new node is generally a 3-step process:
 1. Prepare your environment by installing dependencies

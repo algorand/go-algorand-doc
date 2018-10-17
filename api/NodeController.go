@@ -1,11 +1,9 @@
 package nodecontrol
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/algorand/go-algorand/api/algod"
-	"github.com/algorand/go-algorand/util"
-	"github.com/google/go-querystring/query"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -16,6 +14,13 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/google/go-querystring/query"
+
+	"github.com/algorand/go-algorand/api/algod"
+	"github.com/algorand/go-algorand/config"
+	"github.com/algorand/go-algorand/protocol"
+	"github.com/algorand/go-algorand/util"
 )
 
 // NodeController provides an object for controlling a specific algod node instance
@@ -116,7 +121,8 @@ func (nc NodeController) Status() (response algod.StatusResponse, err error) {
 	return
 }
 
-func (nc NodeController) serverURL() (url.URL, error) {
+// ServerURL returns the appropriate URL for the node under control
+func (nc NodeController) ServerURL() (url.URL, error) {
 	addr, err := nc.GetHostAddress()
 	if err != nil {
 		return url.URL{}, err
@@ -155,7 +161,7 @@ func extractError(resp *http.Response) error {
 // Get performs a GET request to the specific path against the node
 // TODO add query parameters as arguments? or put into a getQuery function
 func (nc NodeController) Get(response interface{}, path string, request interface{}) error {
-	queryURL, err := nc.serverURL()
+	queryURL, err := nc.ServerURL()
 	if err != nil {
 		return err
 	}
@@ -185,29 +191,39 @@ func (nc NodeController) Get(response interface{}, path string, request interfac
 	return dec.Decode(&response)
 }
 
-// PostQuery sends a POST request to the given path with the given request object.
+// PostQuery sends a POST request with JSON content to the given path with the given request object.
 // No query parameters will be sent if request is nil.
 // response must be a pointer to an object as postQuery writes the response there.
 func (nc NodeController) PostQuery(response interface{}, path string, request interface{}) error {
-	queryURL, err := nc.serverURL()
+	queryURL, err := nc.ServerURL()
+
 	if err != nil {
 		return err
 	}
 	queryURL.Path = path
 
+	var payload *bytes.Buffer
+
 	if request != nil {
-		v, err := query.Values(request)
+		v, err := json.Marshal(request)
 		if err != nil {
 			return err
 		}
-
-		queryURL.RawQuery = v.Encode()
+		payload = bytes.NewBuffer(v)
+	} else {
+		payload = new(bytes.Buffer)
 	}
 
-	resp, err := http.PostForm(queryURL.String(), url.Values{})
+	req, err := http.NewRequest("POST", queryURL.String(), payload)
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+
 	if err != nil {
 		return err
 	}
+
 	defer resp.Body.Close()
 
 	err = extractError(resp)
@@ -227,5 +243,64 @@ func (nc NodeController) GetPID() (pid uint64, err error) {
 	}
 
 	pid, err = strconv.ParseUint(strings.TrimSuffix(string(pidStr), "\n"), 10, 32)
+	return
+}
+
+func (nc NodeController) readGenesisJSON(genesisFile string) (genesisLedger protocol.Genesis, err error) {
+	// Load genesis
+	genesisText, err := ioutil.ReadFile(genesisFile)
+	if err != nil {
+		return
+	}
+
+	err = json.Unmarshal(genesisText, &genesisLedger)
+	return
+}
+
+// Clone creates a new DataDir based on the controller's DataDir; if copyLedger is true, we'll clone the ledger.sqlite file
+func (nc NodeController) Clone(targetDir string, copyLedger bool) (err error) {
+	os.RemoveAll(targetDir)
+	err = os.Mkdir(targetDir, 0700)
+	if err != nil && !os.IsExist(err) {
+		return
+	}
+
+	// Copy Core Files
+	files := []string{config.GenesisJSONFile}
+	for _, file := range files {
+		src := filepath.Join(nc.dataDir, file)
+		dest := filepath.Join(targetDir, file)
+		_, err = util.CopyFile(src, dest)
+		if err != nil {
+			return
+		}
+	}
+
+	// Copy Ledger Files if requested
+	if copyLedger {
+		var genesis protocol.Genesis
+		genesis, err = nc.readGenesisJSON(filepath.Join(nc.dataDir, config.GenesisJSONFile))
+		if err != nil {
+			return
+		}
+
+		genesisFolder := filepath.Join(nc.dataDir, genesis.ID())
+		targetGenesisFolder := filepath.Join(targetDir, genesis.ID())
+		err = os.Mkdir(targetGenesisFolder, 0770)
+		if err != nil {
+			return
+		}
+
+		files := []string{"ledger.sqlite"}
+		for _, file := range files {
+			src := filepath.Join(genesisFolder, file)
+			dest := filepath.Join(targetGenesisFolder, file)
+			_, err = util.CopyFile(src, dest)
+			if err != nil {
+				return
+			}
+		}
+	}
+
 	return
 }
