@@ -10,12 +10,12 @@ For all intents and purposes, account and wallet can be used interchangeably whe
 | send        | Send money to an address |
 
 ## To see recent transactions
-> `goal clerk recent -t <num>`
+> `goal clerk recent -t <num> -d <path_to_data_dir>`
 
 Returns the `-t` most recent transactions that the node knows about. If no `-t` is provided, defaults to `10`.
 
 ## To send tokens
-> `goal clerk send -f <fromAddr> -t <toAddr> -a <amount> --fee <fee> --firstvalid <roundNum> --lastvalid <roundNum>`
+> `goal clerk send -f <fromAddr> -t <toAddr> -a <amount> --fee <fee> --firstvalid <roundNum> --lastvalid <roundNum> -d <path_to_data_dir>`
 
 Creates a transaction sending `amount` tokens from `fromAddr` to `toAddr`. If the optional `--fee` is not provided, the transaction will use the recommended amount. If the optional `--firstvalid` and `--lastvalid` are provided, the transaction will only be valid from round `firstValid` to round `lastValid`.
 If broadcast of the transaction is successful, the transaction ID will be returned. 
