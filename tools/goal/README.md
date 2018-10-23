@@ -114,9 +114,9 @@ Access ledger-related details
 
 ---
 
-### [`goal license`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/license.md)
+### `goal license`
 
-Displays license information
+Displays license information.
 
 | Usage |
 |-|
@@ -125,6 +125,9 @@ Displays license information
 | Flags | Usage |
 |-|-|
 | -h, --help  | help for license |
+
+##### To print license information and exit
+> `goal license -d <path_to_datadir>`
 
 ---
 
@@ -209,7 +212,7 @@ Allows to issue, stop and get the status of the specified algorand node
 
 ---
 
-### [`goal version`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/version.md)
+### `goal version`
 
 The current version of the Algorand daemon (algod)
 
@@ -225,3 +228,11 @@ The current version of the Algorand daemon (algod)
 | Global Flags | Usage |
 |-|-|
 | -d, --datadir string  | Data directory for the node |
+
+##### To print version information
+> `goal version -d <path_to_datadir>`
+
+##### To print extra version information
+> `goal version -v -d <path_to_datadir>`
+
+In addition to printing the version, this will print the GenesisID, the update channel, and the commit branch and hash.
