@@ -60,7 +60,7 @@ Available Commands:
 
 ---
 
-### `goal clerk`
+### [`goal clerk`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/clerk.md)
 
 Send and view recent transactions and balances
 
