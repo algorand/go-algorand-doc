@@ -145,6 +145,7 @@ Enable/disable and configure Algorand remote logging
 | Flags | Usage |
 |-|-|
 | -h, --help  | help for logging |
+| -n, --name  | node name to use when enabling logging |
 
 | Global Flags | Usage |
 |-|-|
