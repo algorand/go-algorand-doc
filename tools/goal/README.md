@@ -209,7 +209,7 @@ Allows to issue, stop and get the status of the specified algorand node
 
 ---
 
-### `goal version`
+### [`goal version`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/version.md)
 
 The current version of the Algorand daemon (algod)
 
