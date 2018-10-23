@@ -31,12 +31,15 @@ Also indicates if the account is `[offline]` or `[online]`, and if the account i
 
 Note: this reports the participation rewards for the account between start and end, inclusive.  If the account was offline during some or all of this time, it will not accrue participation rewards for those offline rounds.  It may accrue delegation / offline rewards, but they will not be reported by this command.
 
-## To change the online status of an account
-*** NOT IMPLEMENTED ***
+## To generate a participation key for a given account
+> `goal account addpartkey -d <path_to_data_dir> -a <account_address> -f <feeLimit> -r <keyFirstValid> -l <keyLastValid>`
 
-> `goal account onlinestatus -d <path_to_data_dir> -a <account_address> -o <set online>`
+## To change the online status of an account
+> `goal account onlinestatus -d <path_to_data_dir> -a <account_address> -o <set online> -f <transactionFee> -v <validRounds>`
 
 Set online should be 1 to set online, 0 to set offline.
+The broadcast transaction will be valid for validRounds rounds. `goal` will provide the TXID of the transaction if successful.
+Going online requires that the given account have a valid participation key.
 
 ## To import the wallet from another location into the node instance
 *** NOT IMPLEMENTED ***

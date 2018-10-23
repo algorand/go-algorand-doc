@@ -36,7 +36,8 @@ Once you have a private network running, you can create more accounts, create tr
 
 To create a network, you first create a template file that defines the wallets and nodes comprising the network.  The wallet stake is specified in percent, and the percents should total 100%.
 Online = 0 for wallets that will be marked as offline - they have no participation keys generated and cannot participate in consensus.  They will be eligible for offline rewards / incentives.  Online wallets are created with corresponding participation keys, good for the first 10 million blocks (for now).
-IsRelay indicates the node is intended to be a relay - there must be at least one relay included in any network.  For now, all nodes will connect only to that relay -- support for including all nodes marked as relays is a future task.
+IsRelay indicates the node is intended to be a relay - there must be at least one relay included in any network. Non-relay nodes will connect to the nodes marked as relays.
+ParticipationOnly indicates the wallet only has access to participation keys - not rootkeys. The default behavior is for ParticipationOnly to be false.
 
 ```json
 {
@@ -63,14 +64,17 @@ IsRelay indicates the node is intended to be a relay - there must be at least on
             "Name": "Primary",
             "IsRelay": true,
             "Wallets": [
-                "Wallet1"
+                { "Name": "Wallet1",
+                  "ParticipationOnly": false }
             ]
         },
         {
             "Name": "Node",
             "Wallets": [
-                "Wallet2",
-                "Wallet3"
+                { "Name": "Wallet2",
+                  "ParticipationOnly": false },
+                { "Name": "Wallet3",
+                  "ParticipationOnly": false }
             ]
         }
     ]

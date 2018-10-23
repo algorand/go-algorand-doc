@@ -60,7 +60,7 @@ Available Commands:
 
 ---
 
-### `goal clerk`
+### [`goal clerk`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/clerk.md)
 
 Send and view recent transactions and balances
 
@@ -101,6 +101,7 @@ Access ledger-related details
 |------|------------------------|
 | balances    | Show all non-zero account balances |
 | rewardstree | Shows the current rewards tree |
+| supply      | Shows the round, total money, and online money |
 
 | Flags | Usage |
 |-|-|
@@ -144,6 +145,7 @@ Enable/disable and configure Algorand remote logging
 | Flags | Usage |
 |-|-|
 | -h, --help  | help for logging |
+| -n, --name  | node name to use when enabling logging |
 
 | Global Flags | Usage |
 |-|-|
