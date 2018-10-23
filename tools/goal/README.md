@@ -101,6 +101,7 @@ Access ledger-related details
 |------|------------------------|
 | balances    | Show all non-zero account balances |
 | rewardstree | Shows the current rewards tree |
+| supply      | Shows the round, total money, and online money |
 
 | Flags | Usage |
 |-|-|
