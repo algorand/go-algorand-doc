@@ -85,6 +85,7 @@ Send and view recent transactions and balances
 ---
 
 ### `goal help`
+To print information and usage of commands, use `goal help`, or add the `--help` flag to other commands.
 
 ---
 
