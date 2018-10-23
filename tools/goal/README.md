@@ -88,7 +88,7 @@ Send and view recent transactions and balances
 
 ---
 
-### `goal ledger`
+### [`goal ledger`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/ledger.md)
 
 Access ledger-related details
 
