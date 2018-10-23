@@ -128,7 +128,7 @@ Displays license information
 
 ---
 
-### `goal logging`
+### [`goal logging`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/logging.md)
 
 Enable/disable and configure Algorand remote logging
 
