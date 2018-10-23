@@ -114,7 +114,7 @@ Access ledger-related details
 
 ---
 
-### `goal license`
+### [`goal license`](https://github.com/algorand/go-algorand-doc/blob/master/tools/goal/license.md)
 
 Displays license information
 
