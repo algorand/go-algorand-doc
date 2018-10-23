@@ -127,7 +127,7 @@ Displays license information.
 | -h, --help  | help for license |
 
 ##### To print license information and exit
-> `goal license -d <path_to_datadir>`
+> `goal license`
 
 ---
 
