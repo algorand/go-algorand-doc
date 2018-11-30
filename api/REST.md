@@ -6,6 +6,13 @@ The testnet build released 11/21/18 added security to most API calls.
 
 The token is located in the data directory in "algod.token" after execution of any goal command.
 
+The token can also be generated using the following command:
+
+     - Goal node generatetoken -d data
+
+Note that you have to specify the node data directory or have the $ALGORAND_DATA enviornment variable set.
+The node must be shutdown to execute this command.
+
 Pass the token in the header of the API call - "X-Algo-API-Token={token}"
 
     - Ex. curl http://127.0.0.1:8080/accounts -H "X-Algo-API-Token:{token}"
