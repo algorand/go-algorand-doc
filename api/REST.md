@@ -1,5 +1,17 @@
 # REST API (Remote)
 
+## API Token update
+
+The testnet build released 11/21/18 added security to most API calls.
+
+The token is located in the data directory in "algod.token" after execution of any goal command.
+
+Pass the token in the header of the API call - "X-Algo-API-Token={token}"
+
+    - Ex. curl http://127.0.0.1:8080/accounts -H "X-Algo-API-Token:{token}"
+
+## API Reference
+
 | Call | Parameter | Returns | Type | Description |
 |------|-----------|---------|------|-------------|
 |/account/{pk string}|pubkey string|number|GET|Returns the balance of \{ pk string \}|/account/{pk string}/passphrase|passphrase string	GET|Returns the passphrase of \{ pk string\}|
