@@ -13,9 +13,10 @@ The token can also be generated using the following command:
 Note that you have to specify the node data directory or have the $ALGORAND_DATA enviornment variable set.
 The node must be shutdown to execute this command.
 
-Pass the token in the header of the API call - "X-Algo-API-Token={token}"
+Pass the token in the header of the API call - "X-Algo-API-Token: {token}"
 
     - Ex. curl http://127.0.0.1:8080/accounts -H "X-Algo-API-Token:{token}"
+    - Ex. local data directory curl "http://$(cat algod.net)/status" -H "X-Algo-API-Token: $(cat algod.token)" 
 
 ## API Reference
 

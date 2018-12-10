@@ -79,3 +79,17 @@ ParticipationOnly indicates the wallet only has access to participation keys - n
         }
     ]
 }
+```
+
+## Cloning a node in the network
+
+Once a network is created you can add nodes by cloning existing ones. To do this, open a terminal and change the directory to networks directory. For the above examples this would be ~/net1. To clone the node enter
+> 'goal node clone -d Primary -n -t NewNode'
+
+Any of the nodes in the directory can be cloned. The above example clones the Primary node. This will create the configuration files in a NewNode directory for the new node. If the network is running you can start the node using goal node start -d path_to_newnode or stop the entire network and restart it. 
+
+## Stopping/Starting a node in the network
+In addition to starting or stopping the network, you can individually start or stop a node by using goal and passing the proper data directory for the specific node.
+> 'goal node stop -d ~/net1/Primary'
+> 'goal node start -d ~/net1/Node'
+
