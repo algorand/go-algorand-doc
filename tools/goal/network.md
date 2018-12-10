@@ -91,5 +91,6 @@ Any of the nodes in the directory can be cloned. The above example clones the Pr
 ## Stopping/Starting a node in the network
 In addition to starting or stopping the network, you can individually start or stop a node by using goal and passing the proper data directory for the specific node.
 > 'goal node stop -d ~/net1/Primary'
+
 > 'goal node start -d ~/net1/Node'
 
