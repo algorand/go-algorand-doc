@@ -89,9 +89,9 @@ Once a network is created you can add nodes by cloning existing ones. To do this
 Any of the nodes in the directory can be cloned. The above example clones the Primary node. This will create the configuration files in a NewNode directory for the new node. If the network is running you can start the node using goal node start -d path_to_newnode or stop the entire network and restart it. 
 
 ## Stopping/Starting a node in the network
-In addition to starting or stopping the network, you can individually start or stop a node by using goal and passing the proper data directory for the specific node. When starting the node you must provide the peers list of listening relays in the network. This should be a semi-colon separated list. You can get these by looking at the contents of the algod-listen.net file of nodes in the network. These files will be in the data directories of each node in the Private network.
+In addition to starting or stopping the network (which is the preferred method), you can individually start or stop a node by using goal and passing the proper data directory for the specific node. When starting the node you must provide the peers list of listening relays in the network. This should be a semi-colon separated list. You can get these by looking at the contents of the algod-listen.net file of nodes in the network. These files will be in the data directories of each relay in the Private network. In the template above this will only be the Primary node (based on isRelay property) but in the third example below we show starting a node with more than one relay. Note that is you only have one relay and stop it the network will not continue until you start that node again. In this case you would not use the -p command line option as this is the relay node and would only require the start command with the data directory.
 
-> 'goal node stop -d ~/net1/Primary'
+> 'goal node stop -d ~/net1/Node'
 
 > 'goal node start -d ~/net1/Node' -p "127.0.0.1:52530"
 
