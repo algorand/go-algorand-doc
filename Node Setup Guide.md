@@ -129,7 +129,7 @@ Note we do not currently configure the container for any persistent storage, so 
 See installing on Ubuntu
 
 ## 6. Configuring your node as a Relay
-A benefit of our decentralized network implementation is that a relay is effectively the same as any other node.  The distinction currently is made by configuring a node to actively listen for connections from other nodes, and having itself advertised using SRV records available through DNS.
+A benefit of our decentralized network implementation is that a relay is effectively the same as any other node.  The distinction currently is made by configuring a node to actively listen for connections from other nodes, and having itself advertised using SRV records available through DNS. As a precaution is not recommended that relay nodes interact with accounts or participate in consensus. The primary reason for this recommendation is because the relay address is publically known and more likely to be subject to malicious attacks. If you want to run a relay and a normal node, just install the normal node on a different machine without a publicly advertised ip address.
 
 Please contact Algorand if you are interested in running a Relay that will be able to support the network.  This requires a substantially more powerful machine than a typical Node.
 
