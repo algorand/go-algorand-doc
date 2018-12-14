@@ -146,9 +146,7 @@ Add a line that looks like this (run update.sh every hour of every day), where â
 ## 8. Running algod as a service
 To ensure your node has maximum availability on the network, we have added the ability to run it as a service.
 
-We have the process working but have not incorporated it into our installation, so it is a manual process.
-
-After installing per the above instructions, download githib: downloads/algorand@.service and follow the instructions at the top of the file.  Note that the file assumes you used the recommended binary and data locations above. You will also need to edit it to change 'user' to the appropriate username.
+We are currently editing the configuration files for this and will update shortly.
 
 ## 9. Notes on installing on other Linux Distros
 ### AWS Linux (Red Hat 4.8.5-11)
