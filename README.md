@@ -16,7 +16,7 @@ If you want to suggest an alternative communications channel, feel free to do so
 At this time, we're expecting participants to run standalone Nodes and not Relays, so the hardware requirements are fairly minimal.  You need 4-8GB RAM, 100GB HDD/SSD, and 10Mbit broadband.  The more cores in your CPU the better, but generally 4 cores are more than enough for a single node.  There are diminishing returns after that.  There is no specific GPU-optimized code, so your graphics card should have no impact.
 
 ## Once you have a running node
-Ensure you have enabled telemetry and send us your Node name and GUID so we can correlate telemetry properly.
+Ensure you have enabled telemetry and send us your Node name and GUID so we can correlate telemetry properly. This process is explained in the [Node Setup Guide](https://github.com/algorand/go-algorand-doc/blob/master/Node%20Setup%20Guide.md).
 
 It's important that you are configured to update regularly or you risk being disconnected from the network and unable to connect until after you update. Not to mention falling behind in features and bug fixes.  We recommend setting up a CRON job as outlined in the [Node Setup Guide](https://github.com/algorand/go-algorand-doc/blob/master/Node%20Setup%20Guide.md).  If you want to manually check for an update, use `./update.sh -d ~/node/data` as discussed in the Setup Guide.
 

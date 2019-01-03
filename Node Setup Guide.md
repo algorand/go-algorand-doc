@@ -28,7 +28,7 @@ Before starting for the first time, you need to enable telemetry and configure a
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry.
+Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry. The output contains the name and GUID of your node.
 
 Then you can start the node!
 
@@ -60,7 +60,7 @@ Before starting for the first time, you need to enable telemetry and configure a
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry.
+Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry. The output contains the name and GUID of your node.
 
 Then you can start the node!
 
@@ -101,7 +101,7 @@ Before starting for the first time, you need to enable telemetry and configure a
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry.
+Please run `./goal logging` and send the output to Algorand so we can correlate you with your telemetry. The output contains the name and GUID of your node.
 
 Then you can start the node!
 
