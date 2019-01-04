@@ -38,7 +38,7 @@ When you first start a node, it will sync with the network. This process can tak
 
     ./goal node status -d data
 
-This command will give you information about the node and what block number it is currently processing. You can check the TestNet dashboard to see what the current block number the rest of the network is currently working on. If your nodes current block is not the latest block, your node is still catching up. When your node is syncing up, the node status command will report an incrementing Sync Time value. 
+This command will give you information about the node and what block number it is currently processing. You can check the TestNet [dashboard](http://r1.algorand.network:5001) to see what the current block number the rest of the network is currently working on. If your node's current block is not the latest block, your node is still catching up. When your node is syncing up, the goal node status command will report an Sync Time value greater than 0. 
 
 To check for, and install, the latest update, you can simply run `./update.sh -d ~/node/data` at any time.  It will query S3 for available builds and see if any are newer than your installed version (to force an update, you can delete algod and run `./update.sh -i -c stable -d ~/node/data` again).  If there is a newer version, it’s downloaded and unpacked before we shut down your node, back up your files, and install the update.  If any part of the process fails, we attempt to restore your previous version (bin and data) and restart the node.  If it succeeds, we’ll start the new version of the node (even if it wasn’t running when you initiated the update).
 
