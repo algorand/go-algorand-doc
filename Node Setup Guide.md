@@ -23,12 +23,12 @@ The data folder holds `genesis.json`, used for creating the initial ledger (`led
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a Host name for your machine (to help identify sources of telemetry).
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to [testnet-team@algorand.com](mailto:testnet-team@algorand.com) so we can correlate you with your telemetry. The output contains the name and GUID of your node.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
 
 Then you can start the node!
 
@@ -38,7 +38,7 @@ When you first start a node, it will sync with the network. This process can tak
 
     ./goal node status -d data
 
-This command will give you information about the node and what block number it is currently processing. You can check the TestNet [dashboard](http://r1.algorand.network:5001) to see what the current block number the rest of the network is currently working on. If your node's current block is not the latest block, your node is still catching up. When your node is syncing, the goal node status command will also report a Sync Time value greater than 0. 
+This command will give you information about the node and what block number it is currently processing. You can check the TestNet [dashboard](http://r1.algorand.network:5001) to see what the current block number the rest of the network is currently working on. If your node's current block is not the latest block, your node is still catching up. When your node is syncing, the goal node status command will also report a Sync Time value greater than 0.
 
 To check for, and install, the latest update, you can simply run `./update.sh -d ~/node/data` at any time.  It will query S3 for available builds and see if any are newer than your installed version (to force an update, you can delete algod and run `./update.sh -i -c stable -d ~/node/data` again).  If there is a newer version, it’s downloaded and unpacked before we shut down your node, back up your files, and install the update.  If any part of the process fails, we attempt to restore your previous version (bin and data) and restart the node.  If it succeeds, we’ll start the new version of the node (even if it wasn’t running when you initiated the update).
 
@@ -61,12 +61,12 @@ To install on a Mac (OSX v10.13.4 / High Sierra):
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a Host name for your machine (to help identify sources of telemetry).
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to [testnet-team@algorand.com](mailto:testnet-team@algorand.com) so we can correlate you with your telemetry. The output contains the name and GUID of your node.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
 
 Then you can start the node!
 
@@ -102,12 +102,12 @@ Nodes have been verified on Ubuntu 18.04.  Other Debian-based distros should wor
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a Host name for your machine (to help identify sources of telemetry).
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
     ./goal logging enable -n MeaningfulHostName
 
-Please run `./goal logging` and send the output to [testnet-team@algorand.com](mailto:testnet-team@algorand.com) so we can correlate you with your telemetry. The output contains the name and GUID of your node.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
 
 Then you can start the node!
 
@@ -163,7 +163,7 @@ We are currently editing the configuration files for this and will update shortl
  * sudo yum install libsodium
 
 ### Ensure your machine’s time is correct.  Ensure you have an NTP service running.
- 
+
 On CentOS:
  * `sudo yum install ntp`
  * `sudo chkconfig ntpd on`

@@ -8,7 +8,7 @@ To get started, refer to the [Node Setup Guide](https://github.com/algorand/go-a
 
 We are using many different communication channels for discussing TestNet.  Our official channel for TestNet support is https://community.algorand.com/.  We will also be monitoring this Github repo for issues and discussions.
 
-Please contact us at testnet@algorand.com if you're not sure who to contact directly.
+Please contact us at [testnet-team@algorand.com](mailto:testnet-team@algorand.com) if you're not sure who to contact directly.
 
 If you want to suggest an alternative communications channel, feel free to do so and we'll consider it.
 
