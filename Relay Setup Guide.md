@@ -23,7 +23,7 @@ Install dependencies
     sudo apt install -y libsodium-dev ca-certificates wget --no-install-recommends
 
 ## Install Algorand
-Grab the installation bootstrapper from [from here](https://github.com/algorand/go-algorand-doc/tree/master/downloads/installers/linux_amd64)  
+Grab the installation bootstrapper [from here](https://github.com/algorand/go-algorand-doc/tree/master/downloads/installers/linux_amd64)  
 Copy it to the new machine.
 
     # From local machine
