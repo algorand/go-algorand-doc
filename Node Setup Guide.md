@@ -23,12 +23,13 @@ The data folder holds `genesis.json`, used for creating the initial ledger (`led
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace <hostname\> with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
-    ./goal logging enable -n MeaningfulHostName
+    ./goal logging enable -n <hostname>
+    # If this reports an error instead of your Node and Guid values, double-check that you have completed all steps outlined above.
 
-Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry so we can contact you if we see something that needs further investigation.
 
 Then you can start the node!
 
@@ -61,12 +62,13 @@ To install on a Mac (OSX v10.13.4 / High Sierra):
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace <hostname\> with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
-    ./goal logging enable -n MeaningfulHostName
+    ./goal logging enable -n <hostname>
+    # If this reports an error instead of your Node and Guid values, double-check that you have completed all steps outlined above.
 
-Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry so we can contact you if we see something that needs further investigation.
 
 Then you can start the node!
 
@@ -102,12 +104,13 @@ Nodes have been verified on Ubuntu 18.04.  Other Debian-based distros should wor
 
 When the installer runs, it will pull down the latest update package from S3 for your platform and install it.
 The `'-n'` option above tells the installed to not auto-start the node.  If installation succeeds you'll be instructed to start the node manually.
-Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace 'MeaningfulHostName' with your desired hostname (e.g. 'SarahsLaptop').
+Before starting for the first time, you need to enable telemetry and configure a hostname for your machine (to help identify sources of telemetry). In the command below, replace <hostname\> with your desired hostname (e.g. 'SarahsLaptop').
 
     cd ~/node
-    ./goal logging enable -n MeaningfulHostName
+    ./goal logging enable -n <hostname>
+    # If this reports an error instead of your Node and Guid values, double-check that you have completed all steps outlined above.
 
-Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry.
+Please run `./goal logging`. The output contains the name and GUID of your node. Submit the output via the following form: [Telemetry Registration](https://www.algorand.com/testnet-tasks-telemetry-registration/). This will allow us to correlate you with your telemetry so we can contact you if we see something that needs further investigation.
 
 Then you can start the node!
 
