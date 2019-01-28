@@ -5,8 +5,8 @@ Send raw transactions
 ### Synopsis
 
 Send raw transactions.  The transactions must be stored in a file,
-encoded using msgpack as transactions.SignedTxn. Multiple transactions
-can be concatenated together in a file.
+		encoded using msgpack as transactions.SignedTxn. Multiple transactions
+		can be concatenated together in a file.
 
 ```
 goal clerk rawsend [flags]

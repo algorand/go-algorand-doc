@@ -4,7 +4,16 @@ Create and manage private, multi-node, locally-hosted networks
 
 ### Synopsis
 
-Allows creating, starting, stopping, and deleting private, locally-hosted networks
+Collection of commands to support the creation and management of
+		'private networks'. These are fully-formed Algorand networks with private,
+		custom Genesis ledgers running the current build of Algorand software.
+		Rather than creating a node instance based on the released genesis.json,
+		these networks have their own and need to be manually connected.
+
+		The basic idea is that we create one or more data directories and wallets
+		to form this network, specify which node owns which wallets, and can
+		start/stop the network as a unit. Each node is just like any other node
+		running on TestNet or DevNet.
 
 ```
 goal network [flags]
@@ -25,8 +34,8 @@ goal network [flags]
 
 ### SEE ALSO
 
-* [goal](goal.md)	 - go-algorand node cli
-* [goal network create](goal_network_create.md)	 - Create a private named network
+* [goal](goal.md)	 - CLI for interacting with Algorand.
+* [goal network create](goal_network_create.md)	 - Create a private named network from a template
 * [goal network delete](goal_network_delete.md)	 - Stops and Deletes a deployed private network
 * [goal network restart](goal_network_restart.md)	 - Restart a deployed private network
 * [goal network start](goal_network_start.md)	 - Start a deployed private network

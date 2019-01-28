@@ -4,7 +4,11 @@ Change online status for the specified account
 
 ### Synopsis
 
-Change online status for the specified account
+Change online status for the specified account. Set online should be 1
+		to set online, 0 to set offline. The broadcast transaction will be valid for
+		a limited number of rounds. goal will provide the TXID of the transaction if
+		successful. Going online requires that the given account have a valid
+		participation key.
 
 ```
 goal account changeonlinestatus [flags]

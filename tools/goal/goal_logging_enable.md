@@ -4,7 +4,8 @@ Enable Algorand remote logging
 
 ### Synopsis
 
-Enable Algorand remote logging with specified node name
+This will turn on remote logging. The "friendly name" for the node,
+		used by logging, will be determined by -n nodename.
 
 ```
 goal logging enable -n nodeName [flags]

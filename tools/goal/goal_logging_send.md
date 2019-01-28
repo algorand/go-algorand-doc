@@ -4,10 +4,10 @@ Upload logs and data for analysis
 
 ### Synopsis
 
-Upload log, ledger, and wallet files for analysis
+Upload log, ledger, and wallet files to Algorand for analysis
 
 ```
-goal logging send -d datadir [flags]
+goal logging send [flags]
 ```
 
 ### Options

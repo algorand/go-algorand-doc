@@ -24,7 +24,7 @@ goal logging [flags]
 
 ### SEE ALSO
 
-* [goal](goal.md)	 - go-algorand node cli
+* [goal](goal.md)	 - CLI for interacting with Algorand.
 * [goal logging disable](goal_logging_disable.md)	 - Disable Algorand remote logging
 * [goal logging enable](goal_logging_enable.md)	 - Enable Algorand remote logging
 * [goal logging send](goal_logging_send.md)	 - Upload logs and data for analysis

@@ -1,10 +1,11 @@
 ## goal network create
 
-Create a private named network
+Create a private named network from a template
 
 ### Synopsis
 
-Create a private named network from a template
+Creates a collection of folders under ~/net1 that make up the entire
+		private network named 'private' (simplifying cleanup).
 
 ```
 goal network create [flags]

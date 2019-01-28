@@ -4,7 +4,9 @@ Show the list of Algorand accounts on this machine
 
 ### Synopsis
 
-Show the list of Algorand accounts on this machine
+Show the list of Algorand accounts on this machine. Also indicates
+		whether the account is [offline] or [online], and if the account is the
+		default account for goal.
 
 ```
 goal account list [flags]

@@ -1,10 +1,13 @@
 ## goal account new
 
-Create a new Algorand account
+Create a new account
 
 ### Synopsis
 
-Create a new Algorand account
+Creates a new account with its corresponding *.rootkey wallet file in
+		the current ledger directory (e.g. data/testnet-v10). The name
+		specified here is store in a local configuration file and is only
+		used by goal when working against that specific node instance.
 
 ```
 goal account new [flags]

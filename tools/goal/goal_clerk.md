@@ -4,7 +4,7 @@ Provides the tools to control transactions
 
 ### Synopsis
 
-Send and view recent transactions and balances
+Collection of commands to support the mangement of transaction information.
 
 ```
 goal clerk [flags]
@@ -24,7 +24,7 @@ goal clerk [flags]
 
 ### SEE ALSO
 
-* [goal](goal.md)	 - go-algorand node cli
+* [goal](goal.md)	 - CLI for interacting with Algorand.
 * [goal clerk multisig](goal_clerk_multisig.md)	 - Provides tools working with multisig transactions 
 * [goal clerk rawsend](goal_clerk_rawsend.md)	 - Send raw transactions
 * [goal clerk send](goal_clerk_send.md)	 - Send money to an address

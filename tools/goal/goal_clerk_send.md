@@ -4,9 +4,13 @@ Send money to an address
 
 ### Synopsis
 
-Send money from one account to another.
-Note: by default, the money will be withdrawn from the default account
-
+Send money from one account to another.\nNote: by default, the money
+		will be withdrawn from the default account\n\nCreates a transaction sending
+		amount tokens from fromAddr to toAddr. If the optional --fee is not
+		provided, the transaction will use the recommended amount. If the optional
+		--firstvalid and --lastvalid are provided, the transaction will only be
+		valid from round firstValid to round lastValid. If broadcast of the
+		transaction is successful, the transaction ID will be returned.
 
 ```
 goal clerk send [flags]

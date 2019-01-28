@@ -24,7 +24,7 @@ goal ledger [flags]
 
 ### SEE ALSO
 
-* [goal](goal.md)	 - go-algorand node cli
+* [goal](goal.md)	 - CLI for interacting with Algorand.
 * [goal ledger balances](goal_ledger_balances.md)	 - Show all non-zero account balances
 * [goal ledger supply](goal_ledger_supply.md)	 - Show ledger token supply
 

@@ -1,10 +1,12 @@
 ## goal node
 
-Init, stop and get the status of the specified algorand node
+Manage a specified algorand node
 
 ### Synopsis
 
-Allows to issue, stop and get the status of the specified algorand node 
+Collection of commands to support the creation and management of
+		Algorand node instances, where each instance corresponds to a unique data
+		directory.
 
 ```
 goal node [flags]
@@ -24,7 +26,7 @@ goal node [flags]
 
 ### SEE ALSO
 
-* [goal](goal.md)	 - go-algorand node cli
+* [goal](goal.md)	 - CLI for interacting with Algorand.
 * [goal node clone](goal_node_clone.md)	 - Clone the specified node to create another node
 * [goal node generatetoken](goal_node_generatetoken.md)	 - Generate and install a new API token
 * [goal node lastround](goal_node_lastround.md)	 - Print the last round number
