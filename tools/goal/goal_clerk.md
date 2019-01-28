@@ -25,6 +25,7 @@ goal clerk [flags]
 ### SEE ALSO
 
 * [goal](goal.md)	 - go-algorand node cli
+* [goal clerk multisig](goal_clerk_multisig.md)	 - Provides tools working with multisig transactions 
 * [goal clerk rawsend](goal_clerk_rawsend.md)	 - Send raw transactions
 * [goal clerk send](goal_clerk_send.md)	 - Send money to an address
 
