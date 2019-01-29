@@ -1,4 +1,6 @@
-# goal network
+# Creating a Private Network
+
+Use the `goal network` commands to create a private network.
 
 The `goal network` collection of commands are provided to support the creation and management of 'private networks'.  These are fully-formed Algorand networks with private, custom Genesis ledgers running the current build of Algorand software.  Rather than creating a node instance based on the released genesis.json, these networks have their own and need to be manually connected.
 
@@ -34,7 +36,7 @@ Once you have a private network running, you can create more accounts, create tr
 
 ## Sample Network Template JSON
 
-To create a network, you first create a template file that defines the wallets and nodes comprising the network.  The wallet stake is specified in percent, and the percents should total 100%.
+To create a network, you first create a template file that defines the wallets and nodes comprising the network.  The wallet stake is specified in percent, and the percents should total 100%. Fractional percentages like 0.01 are allowed.
 Online = 0 for wallets that will be marked as offline - they have no participation keys generated and cannot participate in consensus.  They will be eligible for offline rewards / incentives.  Online wallets are created with corresponding participation keys, good for the first 10 million blocks (for now).
 IsRelay indicates the node is intended to be a relay - there must be at least one relay included in any network. Non-relay nodes will connect to the nodes marked as relays.
 ParticipationOnly indicates the wallet only has access to participation keys - not rootkeys. The default behavior is for ParticipationOnly to be false.
