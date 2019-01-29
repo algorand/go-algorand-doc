@@ -4,7 +4,7 @@ Create a private named network from a template
 
 ### Synopsis
 
-Creates a collection of folders under ~/net1 that make up the entire
+Creates a collection of folders under the specified root directory that make up the entire
 		private network named 'private' (simplifying cleanup).
 
 ```

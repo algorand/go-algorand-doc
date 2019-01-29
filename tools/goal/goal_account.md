@@ -4,8 +4,7 @@ Control and manage Algorand accounts
 
 ### Synopsis
 
-Collection of commands to support the creation and management of
-		accounts / wallets tied to a specific Algorand node instance.
+Collection of commands to support the creation and management of accounts / wallets tied to a specific Algorand node instance.
 
 ```
 goal account [flags]

@@ -4,10 +4,7 @@ Create a new account
 
 ### Synopsis
 
-Creates a new account with its corresponding *.rootkey wallet file in
-		the current ledger directory (e.g. data/testnet-v10). The name
-		specified here is store in a local configuration file and is only
-		used by goal when working against that specific node instance.
+Coordinates the creation of a new account with KMD. The name specified here is stored in a local configuration file and is only used by goal when working against that specific node instance.
 
 ```
 goal account new [flags]

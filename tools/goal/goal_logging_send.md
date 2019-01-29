@@ -4,7 +4,7 @@ Upload logs and data for analysis
 
 ### Synopsis
 
-Upload log, ledger, and wallet files to Algorand for analysis
+Upload logs and debugging information to Algorand for analysis. Ledger and wallet data are not included.
 
 ```
 goal logging send [flags]

@@ -4,7 +4,7 @@ Stops and Deletes a deployed private network
 
 ### Synopsis
 
-Stops and Deletes a deployed private network
+Stops and Deletes a deployed private network. NOTE: This does not prompt first - so be careful before you do this!
 
 ```
 goal network delete [flags]
