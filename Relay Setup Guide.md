@@ -47,6 +47,8 @@ Connect to instance again and install algod.  Note we follow a naming convention
     # <DNSNAME> should be the full name like r1.network.algorand
     ./diagcfg metric enable -e <DNSNAME> -d data/relay
 
+note: You'll get an error similar to "Cloudflare credentials are missing...".  You can ignore this - we'll handle the registration with Cloudflare, our DNS provider.
+
 ## <a id="service">Intall and run as a service</a>
 
     # Edit ~/algorand/testnet/algorand@.service.template, if necessary
