@@ -49,17 +49,17 @@ ParticipationOnly indicates the wallet only has access to participation keys - n
             {
                 "Name": "Wallet1",
                 "Stake": 50,
-                "Online": 1
+                "Online": true
             },
             {
                 "Name": "Wallet2",
                 "Stake": 40,
-                "Online": 1
+                "Online": true
             },
             {
                 "Name": "Wallet3",
                 "Stake": 10,
-                "Online": 0
+                "Online": false
             }
         ],
         "Nodes": [
