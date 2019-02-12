@@ -43,43 +43,45 @@ ParticipationOnly indicates the wallet only has access to participation keys - n
 
 ```json
 {
-    "NetworkName": "",
-    "GenesisData": [
-        {
-            "Name": "Wallet1",
-            "Stake": 50,
-            "Online": 1
-        },
-        {
-            "Name": "Wallet2",
-            "Stake": 40,
-            "Online": 1
-        },
-        {
-            "Name": "Wallet3",
-            "Stake": 10,
-            "Online": 0
-        }
-    ],
-    "Nodes": [
-        {
-            "Name": "Primary",
-            "IsRelay": true,
-            "Wallets": [
-                { "Name": "Wallet1",
-                  "ParticipationOnly": false }
-            ]
-        },
-        {
-            "Name": "Node",
-            "Wallets": [
-                { "Name": "Wallet2",
-                  "ParticipationOnly": false },
-                { "Name": "Wallet3",
-                  "ParticipationOnly": false }
-            ]
-        }
-    ]
+    "Genesis": {
+        "NetworkName": "",
+        "Wallets": [
+            {
+                "Name": "Wallet1",
+                "Stake": 50,
+                "Online": 1
+            },
+            {
+                "Name": "Wallet2",
+                "Stake": 40,
+                "Online": 1
+            },
+            {
+                "Name": "Wallet3",
+                "Stake": 10,
+                "Online": 0
+            }
+        ],
+        "Nodes": [
+            {
+                "Name": "Primary",
+                "IsRelay": true,
+                "Wallets": [
+                    { "Name": "Wallet1",
+                      "ParticipationOnly": false }
+                ]
+            },
+            {
+                "Name": "Node",
+                "Wallets": [
+                    { "Name": "Wallet2",
+                      "ParticipationOnly": false },
+                    { "Name": "Wallet3",
+                      "ParticipationOnly": false }
+                ]
+            }
+        ]
+    }
 }
 ```
 
