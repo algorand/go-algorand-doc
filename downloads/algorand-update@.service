@@ -1,34 +1,3 @@
-## This file should be installed as:
-##
-##   /lib/systemd/system/algorand-update@.timer
-##
-## along with algorand-update@.service as:
-##
-##   /lib/systemd/system/algorand-update@.service
-##
-## and then running "systemctl daemon-reload".
-##
-## To enable and start algorand automatic updates for a particular directory, run:
-##
-##   systemctl enable algorand-update@$(systemd-escape /home/algo/algorand/testnet).timer
-##   systemctl start algorand-update@$(systemd-escape /home/algo/algorand/testnet).timer
-##
-## This assumes a directory layout where the update.sh script lives at
-## /home/user/node/update.sh, and the data lives under
-## /home/user/node/data.
-##
-## To allow the update script (which runs as the current user) to manipulate
-## the algorand-update systemd service, the following lines need to be added to
-## /etc/sudoers (using visudo):
-##
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl start algorand-update@*
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop algorand-update@*
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart algorand-update@*
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl status algorand-update@*
-##
-## On an Ubuntu machine, replace /usr/bin/systemctl with /bin/systemctl.
-##
-## We do not use systemd user services because they are disabled in CentOS.
 [Unit]
 Description=auto-update algorand software under %I
 AssertPathExists=%I
