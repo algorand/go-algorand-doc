@@ -1,0 +1,11 @@
+[Unit]
+Description=auto-update algorand software under %I
+AssertPathExists=%I
+
+[Service]
+Type=oneshot
+User=algo
+Group=algo
+StandardOutput=file:%Iupdate.log
+StandardError=file:%Iupdate.log
+ExecStart=%Iupdate.sh -d %Idata
