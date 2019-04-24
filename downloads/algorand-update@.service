@@ -18,7 +18,7 @@
 ## /home/user/node/data.
 ##
 ## To allow the update script (which runs as the current user) to manipulate
-## the algorand-update systemd service, the following lines need to be added to
+## the algorand systemd service, the following lines need to be added to
 ## /etc/sudoers (using visudo):
 ##
 ##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl start algorand-update@*
