@@ -54,7 +54,7 @@ go run cmd/main.go --token=$(docker exec randpool cat /root/randpool/Primary/alg
 ## Build
 
 ```bash
-docker build -t randpool/devnode:v1.0.0 ./infra/devnode
+docker build -t randpool/devnode:v1.0.0 ./
 ```
 
 ## Run
