@@ -2,11 +2,11 @@
 
 Hi,
 
-Thanks for your interest in joining our TestNet, we are very excited to have you!
+Thanks for your interest in Algorand, we are very excited to have you!
 
-Algorand uses this test environment to measure performance and test new features. We collect metrics and data to help improve the protocol and troubleshoot issues (we will not collect this data on the MainNet unless you explicitly allow it).
+Algorand software includes optional support for collecting telemetry data that is sent to the Cloud for our analysis.  We collect metrics and data to help improve the protocol and troubleshoot issues.  Telemetry is disabled by default and can be toggled using the `diagcfg telemetry` commands.
 
-By proceeding to join the Algorand TestNet you are acknowledging your consent to the collection and temporary storage for the data outlined below.
+By enabling telemetry, you are acknowledging your consent to the collection and temporary storage for the data outlined below.
 
 <table>
   <tr>
