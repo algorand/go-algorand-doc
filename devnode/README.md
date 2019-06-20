@@ -5,10 +5,28 @@
 This folder contains the files necessary to build a container image that can be used to run an algorand private local node.
 Once you have built the image, you can run it and simply connect to the REST API to the port 7979 (see scripts below).
 
+## Build
+
+```bash
+docker build -t randpool/node:v1.0.0 ./
+```
+
+## Run
+
+```bash
+docker run -dit --name randpool-node \
+    -p 7979:7979 \
+    -p 7833:7833 \
+    --rm \
+    randpool/node:v1.0.0
+```
+
+## Test
+
 To test if your container is running correctly, you can run this golang source code, which should give you the node status if successful:
 
 ```bash
-go run cmd/main.go --token=$(docker exec randpool cat /root/randpool/Primary/algod.token) --port=7979
+go run main.go --token=$(docker exec randpool cat /root/randpool/Primary/algod.token) --port=7979
 ```
 
 ```golang
@@ -49,19 +67,4 @@ go run cmd/main.go --token=$(docker exec randpool cat /root/randpool/Primary/alg
         fmt.Printf("algod catchup: %d\n", nodeStatus.CatchupTime)
         fmt.Printf("algod latest version: %s\n", nodeStatus.LastVersion)
     }
-```
-
-## Build
-
-```bash
-docker build -t randpool/devnode:v1.0.0 ./
-```
-
-## Run
-
-```bash
-docker run -dit --name randpool \
-    -p 7979:7979 \
-    --rm \
-    randpool/devnode:v1.0.0
 ```

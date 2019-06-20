@@ -1,7 +1,10 @@
 #! /bin/bash
 
+# start kmd
+/app/goal kmd start -d /app/nodes/randpool/Primary
+
 # start network
-/root/node/goal network start -r /root/randpool -d /root/randpool
+/app/goal network start -r /app/nodes/randpool
 
 # UGLY HACK TODO
 tail -f /dev/null

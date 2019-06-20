@@ -1,43 +1,55 @@
-FROM ubuntu:19.04
+FROM debian:buster-slim as downloader
 
 LABEL maintainer="vincent_serpoul@manulife.com"
 
 RUN mkdir inst
 WORKDIR /inst
 
-COPY ./install_master_linux-amd64.tar.gz /inst/
-
-RUN tar -xf install_master_linux-amd64.tar.gz
-
 RUN apt-get update &&\
     apt-get install -y ca-certificates
 
-RUN mkdir -p /root/node
+COPY ./install_master_linux-amd64.tar.gz /inst/
+RUN tar -xf /inst/install_master_linux-amd64.tar.gz -C /inst
 
-RUN ./update.sh -i -c stable -p ~/node -d ~/node/data -n
+RUN /inst/update.sh -i -c stable -p /app -d /var/nodedata -n
 
-######
+COPY ./genesis.json /app/randpool.genesis.json
 
-COPY ./genesis.json /root/randpool.genesis.json
+RUN mkdir -p /var/kmddata && \
+    mkdir -p /var/nodedata
 
 # Create randpool network
-RUN /root/node/goal network create -r /root/randpool -n private -t /root/randpool.genesis.json
+RUN /app/goal network create -r /app/nodes/randpool -n private -t /app/randpool.genesis.json
 
 # desactivate telemetry
-RUN /root/node/diagcfg telemetry disable
+RUN /app/diagcfg telemetry disable
 
-# Copy the right config
-# COPY ./nodeconfig.json /root/randpool/Node/config.json
-COPY ./nodeconfig.json /root/randpool/Primary/config.json
+FROM debian:buster-slim
 
-VOLUME ["root/randpool"]
+COPY --from=downloader /app /app
 
-COPY ./start.sh /root/start.sh
+# Copy the right config for the node
+COPY ./node_config.json /app/nodes/randpool/Primary/config.json
 
-EXPOSE 7979
+# Copy the right config for kmd
+COPY ./kmd_config.json /app/nodes/randpool/Primary/kmd-v0.5/kmd_config.json
 
-WORKDIR /root
+RUN groupadd -r algo && useradd -r -g algo algo
+RUN chown -R algo:algo /app && \
+    chown -R algo:algo /app/nodes/randpool/Primary
 
-ENTRYPOINT ["/root/start.sh"]
+USER algo
 
-# docker build -t randpool/devnode .
+# import wallet1 so it's avail
+RUN /app/goal account importrootkey -u -d /app/nodes/randpool/Primary
+
+VOLUME ["/app/nodes/randpool/Primary"]
+
+COPY ./start.sh /app/start.sh
+
+EXPOSE 7979 7833
+
+
+ENTRYPOINT ["/app/start.sh"]
+
+# docker build -t randpool/node:v1.0.0 infra/node
