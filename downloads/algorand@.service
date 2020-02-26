@@ -17,10 +17,10 @@
 ## the algorand systemd service, the following lines need to be added to
 ## /etc/sudoers (using visudo):
 ##
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl start *
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop *
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart *
-##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl status *
+##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl start algorand@*
+##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop algorand@*
+##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart algorand@*
+##   algo ALL=(ALL) NOPASSWD: /usr/bin/systemctl status algorand@*
 ##
 ## On an Ubuntu machine, replace /usr/bin/systemctl with /bin/systemctl.
 ##
